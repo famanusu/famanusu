@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Glow</title>
+    <!-- Favicon -->
+    <link rel="icon" href="moon/favicon.png" type="image/png">
+
+</head>
+
+<body>
+
+    <section id="Moon-parallax-effect">
+        <section id="section">
+            <img src="moon/bg.jpg" id="bg">
+            <img src="moon/moon.png" id="moon">
+            <img src="moon/mountain.png" id="mountain">
+            <img src="moon/road.png" id="road">
+            <h2 id="text">Lunar Glow</h2>
+        </section>
+        <section class="section white">
+            <h2>Lunar Glow</h2>
+            <p>The soft light that emanates from the moon, caressing the night with quiet elegance. Like a whisper of the universe, it dances over the surface of the ocean, sparkles on dewy leaves, and casts faint shadows on deserted streets.
+                <br> <br> Not just light, but a silent wonder that evokes nostalgia, inviting the heart to contemplate in the stillness of the night. Lunar Glow is a light that does not blind, but guides-bringing serenity, hope, and mystery in every glimmer.
+                <br> <br> Under its radiance, the world does not feel dark, but full of stories waiting to be told.
+            </p>
+        </section>
+    </section>
+
+
+    <script type="text/javascript">
+        let bg = document.getElementById("bg");
+        let moon = document.getElementById("moon");
+        let mountain = document.getElementById("mountain");
+        let road = document.getElementById("road");
+        let text = document.getElementById("text");
+
+        window.addEventListener('scroll', function() {
+            var value = window.scrollY;
+
+            bg.style.top = value * 0.5 + 'px';
+            moon.style.left = -value * 0.5 + 'px';
+            mountain.style.top = -value * 0.15 + 'px';
+            road.style.top = value * 0.15 + 'px';
+            text.style.top = value * 1 + 'px';
+        })
+    </script>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #0a2a43;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background-color: #0a2a43;
+            border-radius: 10px;
+        }
+        
+        body {
+            scrollbar-width: thin;
+            scrollbar-color: #0a2a43 #0a2a43;
+        }
+        
+        .section {
+            position: relative;
+            padding: 75px 100px;
+        }
+        
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .section p {
+            font-size: 16px;
+            text-align: justify;
+        }
+        
+        #Moon-parallax-effect {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #0a2a43;
+            min-height: 1200px;
+        }
+        
+        #section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #section:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, #0a2a43, transparent);
+            z-index: 10000;
+        }
+        
+        #section:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a2a43;
+            z-index: 10000;
+            mix-blend-mode: color;
+        }
+        
+        #section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        
+        #text {
+            position: relative;
+            color: #fff;
+            font-size: 10em;
+            z-index: 1;
+        }
+        
+        #road {
+            z-index: 2;
+        }
+        
+        .white {
+            color: #fff;
+        }
+    </style>
+
+</body>
+
+</html>
